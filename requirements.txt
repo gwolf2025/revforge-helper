@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic
+httpx
+rapidfuzz
+scikit-learn
+pandas
+jinja2
+pycountry
+rispy
+bibtexparser
+lxml
+python-dateutil
+cairosvg
