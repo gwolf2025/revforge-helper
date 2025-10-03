@@ -1,0 +1,29 @@
+from pydantic import BaseModel
+from typing import List, Dict
+
+class ImportOut(BaseModel):
+    project_id: str
+    saved_files: List[str]
+    counts: Dict[str, int]
+
+class DedupIn(BaseModel):
+    project_id: str
+    threshold: float
+
+class DedupOut(BaseModel):
+    summary: Dict[str, int]
+    artifacts: Dict[str, str]
+
+class RerankIn(BaseModel):
+    project_id: str
+
+class RerankOut(BaseModel):
+    order: List[str]
+
+class ExportIn(BaseModel):
+    project_id: str
+    include_individual_files: bool = True
+
+class ExportOut(BaseModel):
+    zip_path: str
+    files: List[str]
